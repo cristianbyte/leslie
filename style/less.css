@@ -1,0 +1,38 @@
+@font-face {
+    font-family: min;
+    src: url(../fonts/min.ttf);
+}
+
+@font-face {
+    font-family: max;
+    src: url(../fonts/max.otf);
+}
+
+:root{
+    --blue: #9ADCFF; 
+    --pink: #FF8AAE; 
+    --melon: #FFB2A6;
+    --yellow: #FFF89A; 
+}
+
+body{
+    background-color: var(--blue);
+}
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.principal__t{
+    font-size: 9rem;
+    font-weight: bold;
+    font-family: max;
+    text-transform: capitalize;
+    color: var(--pink);
+    -webkit-text-stroke-color: var(--yellow);
+    -webkit-text-stroke-width: .5rem;
+}
