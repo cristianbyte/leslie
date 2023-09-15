@@ -9,14 +9,19 @@
 }
 
 :root{
+    --light: #FFFFFF;
     --blue: #9ADCFF; 
     --pink: #FF8AAE; 
     --melon: #FFB2A6;
     --yellow: #FFF89A; 
+    --long: 2rem; 
 }
 
 body{
-    background-color: var(--blue);
+    width: 100vw;
+    overflow: hidden;
+    background: var(--light);
+    background: linear-gradient(0deg, var(--light) 0%, var(--blue) 100%);
 }
 
 .principal{
@@ -25,7 +30,7 @@ body{
     align-items: center;
     flex-direction: row;
     gap: 1rem;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 
@@ -48,7 +53,7 @@ body{
     font-weight: bolder;
     transform: scale(1.1);
     font-size: 9rem;
-    -webkit-text-stroke: 1rem white;
+    -webkit-text-stroke: 1rem var(--light);
     z-index: -1;
 }
 
@@ -69,5 +74,76 @@ body{
     }
     100%{
         transform: translateY(-2%);
+    }
+}
+
+/* CLOUDS */
+
+.clouds{
+    position:absolute;
+    width: calc(var(--long) * 5);
+    aspect-ratio: 3/1;
+    background-color: var(--light);
+    top: 30%;
+    left: -30vw;
+    z-index: -2;
+    border-radius: 2rem;
+    animation: carry 30s 1s linear infinite;
+    will-change: transform;
+}
+
+.clouds:nth-of-type(2){ 
+    animation: carry 25s linear infinite;
+    transform: scale(1.3);
+    top: 50%;
+}
+.clouds:nth-of-type(3){ 
+    animation: carry 50s 10s linear infinite;
+    transform: scale(.3);
+    top: 20%;
+}
+.clouds:nth-of-type(4){ 
+    animation: carry 35s 25s linear infinite;
+    transform: scale(.6);
+    top: 10%;
+}
+.clouds:nth-of-type(5){ 
+    animation: carry 30s 15s linear infinite;
+    transform: scale(.8);
+    top: 35%;
+}
+.clouds:nth-of-type(6){ 
+    animation: carry 20s 15s linear infinite;
+    transform: scale(2.2);
+    top: 70%;
+}
+.clouds::after{
+    top: -80%;
+    left: 30%;
+    position: absolute;
+    content: '';
+    width: calc(var(--long) * 3);
+    aspect-ratio: 1/1;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.clouds::before{
+    top: -40%;
+    left: 15%;
+    position: absolute;
+    content: '';
+    width: calc(var(--long) * 1.5);
+    aspect-ratio: 1/1;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+@keyframes carry {
+    0%{
+        transform: translateX(-9rem) scale(inherit);
+    }
+    100%{
+        transform: translateX(150vw) ;
     }
 }

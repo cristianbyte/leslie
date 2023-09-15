@@ -1,0 +1,46 @@
+# Archivos y directorios generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Carpeta de dependencias de Node.js
+node_modules/
+
+# Carpeta de dependencias de Python
+__pycache__/
+*.pyc
+
+# Carpeta de dependencias de Java
+bin/
+target/
+
+# Carpeta de archivos de construcción
+build/
+
+# Carpeta de archivos temporales
+temp/
+.tmp/
+
+# Archivos de configuración locales
+.env
+.env.local
+
+# Carpeta de registros o logs
+logs/
+*.log
+
+# Carpeta de archivos de respaldo
+backup/
+*.bak
+
+# Carpeta de archivos compilados
+dist/
+
+# Archivo de configuración para Visual Studio Code
+.vscode/settings.json
+
+# Carpeta de archivos generados por IDEs
+.idea/
+*.iml
+
+# Archivos de respaldo de editores de texto
+*~
