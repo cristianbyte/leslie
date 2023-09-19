@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: min0;
+    src: url(../fonts/min0.otf);
+}
+
+@font-face {
     font-family: max;
     src: url(../fonts/max.otf);
 }
@@ -24,7 +29,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10%;
     justify-content: center;
     overflow: hidden;
     background: var(--light);
@@ -40,7 +44,6 @@ body{
     width: 100%;
     position: relative;
     transition: 1s ease-in;
-    display: none;
 }
 
 .disipate{
@@ -61,6 +64,10 @@ body{
     color: var(--pink);
     will-change: transform;
     z-index: 10;
+}
+
+#display{
+    padding-bottom: 10%;
 }
 
 .principal__t::before{
@@ -227,6 +234,14 @@ body{
     }
 }
 
+
+@media (orientation: landscape) {
+    .not{
+        display: none;
+    }
+}
+
+
 @media (orientation: portrait) { 
     :root{
         --long: 1rem; 
@@ -241,5 +256,22 @@ body{
     .principal__t::before{
         -webkit-text-stroke: 2rem var(--light);
     }
+    .not{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 5rem;
+        color: var(--light);
+        background-color: #000000aa;
+        font-family: min;
+        z-index: 200;
+    }
 
 }
+
+
