@@ -65,3 +65,9 @@
     }
 }
 
+@media (orientation: portrait) {
+    .cards{
+        display: none;
+    }
+}
+
