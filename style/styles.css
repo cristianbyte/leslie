@@ -1,0 +1,82 @@
+:root{
+  --lightpink: #F890B3;
+  --mountpink: #76585f;
+  --lavender: #FEF2F4; 
+  --mimipink: #FED9E0;
+  --mimipink2: #FED9E044;
+  --black: #000000;
+}
+
+@font-face {
+  font-family: justSans;
+  src: url('../fonts/just_sans/JUST\ Sans\ Regular.otf');
+}
+@font-face {
+  font-family: okashi;
+  src: url('../fonts/okashi/Okashi.ttf');
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  background-image:  linear-gradient(var(--mimipink2) 2px, transparent 2px), linear-gradient(90deg, var(--mimipink2) 2px, transparent 2px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+
+.window{
+  width: 200px;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--lavender);
+  border-radius: 10px;
+  outline: .2rem solid var(--black);
+  overflow: hidden;
+  z-index: 80;
+}
+
+.window__header{
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: .2rem solid var(--black);
+  background-color: var(--lightpink);
+  .window__title{
+    font-size: .9rem;
+    font-family: justSans;
+    margin-left: 10px;
+    color: var(--mountpink);
+  }
+}
+
+.window__content{
+  width: 100%;
+  height: 70%;
+  background-image: url(../assets/image.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.window__button{
+  width: 100%;
+  height: 15%;
+  border-top: .2rem solid var(--black);
+  background-color: var(--mimipink);
+}
+
+.fill{
+  width: 52px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  background-color: var(--mimipink2);
+  border: 2px solid var(--mimipink2);
+}
