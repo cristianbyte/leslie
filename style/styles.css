@@ -25,7 +25,7 @@ body{
   align-items: center;
   background-color: var(--black);
   background-image:  linear-gradient(var(--mimipink2) 2px, transparent 2px), linear-gradient(90deg, var(--mimipink2) 2px, transparent 2px);
-  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-size: 50px 50px;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
 }
 
@@ -39,6 +39,7 @@ body{
   border-radius: 10px;
   outline: .2rem solid var(--black);
   overflow: hidden;
+  display: none;
   z-index: 80;
 }
 
@@ -79,4 +80,43 @@ body{
   position: absolute;
   background-color: var(--mimipink2);
   border: 2px solid var(--mimipink2);
+}
+
+.heart{
+  position: absolute;
+  opacity: .5;
+  background-color: var(--lightpink);
+  width: 50px;
+  height: 50px;
+  clip-path: polygon(20% 0%, 20% 10%, 10% 10%, 10% 20%,0% 20%,0% 50%,10% 50%,10% 60%,20% 60%,20% 70%,30% 70%,30% 80%,40% 80%,40% 90%,60% 90%,60% 80%,70% 80%,70% 70%,80% 70%,80% 60%,90% 60%,90% 50%,100% 50%,100% 20%,90% 20%,90% 10%,80% 10%,80% 0%,60% 0%,60% 10%, 40% 10%,40% 0%,20% 0%);
+}
+
+.folder{
+  width: 200px;
+  aspect-ratio: 1/1;
+  fill: var(--lightpink);
+  stroke-width: .1rem;
+  stroke: var(--mimipink);
+  cursor: pointer;
+  animation: snozee .5s ease infinite alternate-reverse ;
+  z-index: 100;
+}
+
+@keyframes snozee {
+  0%,30%{
+    transform: rotate(-5deg);
+  }15%,45%{
+    transform: rotate(5deg);
+  }
+  60%,100%{
+    transform: rotate(0);
+  }
+}
+
+@keyframes opacity {
+  0%,100%{
+    opacity: .2;
+  }50%{
+    opacity: 1;
+  }
 }
