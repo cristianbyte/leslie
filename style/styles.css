@@ -80,6 +80,7 @@ body{
   position: absolute;
   background-color: var(--mimipink2);
   border: 2px solid var(--mimipink2);
+  z-index: 10;
 }
 
 .heart{
@@ -92,31 +93,55 @@ body{
 }
 
 .folder{
-  position: relative;
+  transform-origin: 90% 10%;
+  transition: transform .4s ease ;
+  position: absolute;
   width: 200px;
+  border: .5rem solid var(--lavender);
   aspect-ratio: 7/5;
   background-color: var(--lightpink);
-  box-shadow: 0 0 1rem var(--lightpink);
-  ::before{
-    content: '';
-    bottom: 0;
-    position: absolute;
-    background-color: var(--lightpink);
-    width: 100%;
-    height: 70%;
-    transform: skewX(-15deg) translateX(.8rem);
-  }
-  ::after{
-    content: '';
-    position: absolute;
-    box-shadow: 0 -.3rem 1rem var(--lightpink);
-    width: 40%;
-    height: 40%;
-    top: -15%;
-    background-color: var(--lightpink);
-  }
+  border-radius: .2rem;
+  cursor: pointer;
+  perspective: 1000px;
+  z-index: 100;
 }
 
+.folder__moved{
+  transform: translate(-35vw,40vh);
+}
+.folder::after{
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 15%;
+  top: -21%;
+  transform: translateX(-.5rem);
+  background-color: var(--lightpink);
+  border-top: .5rem solid var(--lavender);
+  border-left: .5rem solid var(--lavender);
+  border-right: .5rem solid var(--lavender);
+  border-radius: .2rem;
+}
+.open{
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% + 1rem);
+  height: 100%;
+  border: .5rem solid var(--lavender);
+  transition: transform .3s ease-in;
+  border-radius: .2rem;
+  transform-origin: bottom center;
+  background-color: var(--lightpink);
+  transform: rotate3d(2, 0, 0, 0deg) translate(-.5rem,.5rem);
+}
+
+.open--folder{
+  pointer-events: none;
+  transform-origin: bottom ;
+  transform: rotate3d(2, 0, 0, -30deg) translate(-.5rem,.5rem) skewX(-5deg);
+}
 
 @keyframes shake {
   0%,30%{
