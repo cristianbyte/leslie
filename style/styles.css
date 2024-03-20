@@ -92,17 +92,33 @@ body{
 }
 
 .folder{
+  position: relative;
   width: 200px;
-  aspect-ratio: 1/1;
-  fill: var(--lightpink);
-  stroke-width: .1rem;
-  stroke: var(--mimipink);
-  cursor: pointer;
-  animation: snozee .5s ease infinite alternate-reverse ;
-  z-index: 100;
+  aspect-ratio: 7/5;
+  background-color: var(--lightpink);
+  box-shadow: 0 0 1rem var(--lightpink);
+  ::before{
+    content: '';
+    bottom: 0;
+    position: absolute;
+    background-color: var(--lightpink);
+    width: 100%;
+    height: 70%;
+    transform: skewX(-15deg) translateX(.8rem);
+  }
+  ::after{
+    content: '';
+    position: absolute;
+    box-shadow: 0 -.3rem 1rem var(--lightpink);
+    width: 40%;
+    height: 40%;
+    top: -15%;
+    background-color: var(--lightpink);
+  }
 }
 
-@keyframes snozee {
+
+@keyframes shake {
   0%,30%{
     transform: rotate(-5deg);
   }15%,45%{
