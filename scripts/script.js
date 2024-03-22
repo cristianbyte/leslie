@@ -1,5 +1,6 @@
 let body = document.getElementsByTagName('body')[0];
 const folder = document.querySelector(".folder")
+const windowCute = document.querySelector(".windowCute");
 let numberGrids = Math.floor(window.innerWidth/300 + window.innerHeight/200);
 const gridWidth = Math.floor( window.innerWidth / 50);
 const gridHeight = Math.floor( window.innerHeight / 50);
@@ -30,9 +31,14 @@ function getRandomInt(max) {
 
 window.addEventListener("DOMContentLoaded", async ()=>{
   await folderStart();
-  loadIputTypeFiles();
-  relaseContent();
 });
+
+
+function windowLoadFiles(){
+  //loadIputTypeFiles();
+
+}
+
 
 function loadIputTypeFiles(){
   let input = document.createElement('input');
@@ -61,6 +67,7 @@ function relaseContent(){
 async function folderStart(){
   return new Promise((resolve) =>{
     folder.addEventListener("click", ()=>{
+      windowCute.style.display = "flex";
       const open = document.querySelector(".open");
       open.classList.add('open--folder');
       setTimeout(()=>{
